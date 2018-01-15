@@ -1,8 +1,13 @@
+#### Attention!
+
+> This repo is a fork from [alexcheng1982/docker-magento](https://github.com/alexcheng1982/docker-magento) to be used within EBANX.
+You can use it the way you want, but I cannot guarantee any stability as I will push master and break any backward compatibility if I have to.
+
 # Docker image for Magento 1.x
 
-[![](https://images.microbadger.com/badges/image/alexcheng/magento.svg)](http://microbadger.com/images/alexcheng/magento)
+[![Micro badger status](https://images.microbadger.com/badges/image/gpressutto5/magento-ebanx.svg)](http://microbadger.com/images/gpressutto5/magento-ebanx)
 
-[![Docker build](http://dockeri.co/image/alexcheng/magento)](https://hub.docker.com/r/alexcheng/magento/)
+[![Docker build](http://dockeri.co/image/gpressutto5/magento-ebanx)](https://hub.docker.com/r/gpressutto5/magento-ebanx/)
 
 This repo creates a Docker image for [Magento 1.x](http://magento.com/).
 
@@ -29,7 +34,7 @@ Version | Git branch | Tag name
 You can use `docker run` to run this image directly.
 
 ```bash
-docker run -p 80:80 alexcheng/magento
+docker run -p 80:80 gpressutto5/magento-ebanx
 ```
 
 Then finish Magento installation using web UI. You need to have an existing MySQL server.
@@ -44,7 +49,7 @@ A sample `docker-compose.yml` can be found in this repo.
 
 ```yaml
 web:
-  image: alexcheng/magento
+  image: gpressutto5/magento-ebanx
   ports:
     - "80:80"
   links:
@@ -97,7 +102,7 @@ MAGENTO_ADMIN_PASSWORD    | Magento admin password | magentorocks1
 
 If you want to use `install-magento` script and this images is started as a standalone container using `docker run`, make sure these environment variables are passed in `docker run` with `-e` switch.
 
-After Docker container started, use `docker ps` to find container id of image `alexcheng/magento`, then use `docker exec` to call `install-magento` script.
+After Docker container started, use `docker ps` to find container id of image `gpressutto5/magento-ebanx`, then use `docker exec` to call `install-magento` script.
 
 ```bash
 docker exec -it <container id> install-magento
