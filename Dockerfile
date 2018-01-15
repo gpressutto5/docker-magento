@@ -1,4 +1,4 @@
-FROM occitech/magento:php5.5-apache
+FROM occitech/magento:php5.4-apache
 
 ENV MAGENTO_VERSION 1.9.2.4
 
