@@ -12,7 +12,7 @@ RUN chown -R www-data:www-data /var/www/htdocs
 RUN apt-get update && apt-get install -y mysql-client-5.5 libxml2-dev
 RUN docker-php-ext-install soap
 
-RUN pecl install xdebug
+RUN pecl install xdebug-2.4.1
 RUN docker-php-ext-enable xdebug
 RUN echo "xdebug.remote_enable=1"  >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
 && echo "xdebug.remote_handler=dbgp" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
