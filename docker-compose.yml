@@ -6,6 +6,7 @@ services:
     container_name: magento
     ports:
       - ${MAGENTO_EXTERNAL_PORT:-80}:80
+      - ${XDEBUG_EXTERNAL_PORT:-9000}:9000
     links:
       - magento_db
     env_file:
